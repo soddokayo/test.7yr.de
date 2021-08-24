@@ -23,8 +23,8 @@
 		<button id="B" type="button" class="btn btn-primary mt-5">Primary2</button>
 	</article>
 	<article class="result">
-		<img id="img" class="rounded-circle mt-5" src="flower.jpg" alt="flower">
-		<h2 id="category" class="text-center mt-5">카테고리제목</h2>
+		<img id="img" class="rounded-circle mt-5" src="rsc/flower.jpg" alt="categoryimg">
+		<h2 id="category" class="text-center mt-5">카테고리</h2>
 		<h3 id="explain" class="text-center mt-5">설명</h3>
 	</article>
 	<input type="hidden" id="EI" value="0">
@@ -49,6 +49,24 @@
 			10: {"title": "Q10", "type": "JP", "A": "J", "B": "P"}, 
 			11: {"title": "Q11", "type": "JP", "A": "J", "B": "P"}, 
 			12: {"title": "Q12", "type": "JP", "A": "J", "B": "P"}, 
+		}
+		var result = {
+			"ESTJ": {"category": "ESTJ-category", "explain": "ESTJ-explain", "img": "rsc/ESTJ.jpg"},
+			"ESTP": {"category": "ESTP-category", "explain": "ESTP-explain", "img": "rsc/ESTP.jpg"},
+			"ESFJ": {"category": "ESFJ-category", "explain": "ESFJ-explain", "img": "rsc/ESFJ.jpg"},
+			"ESFP": {"category": "ESFP-category", "explain": "ESFP-explain", "img": "rsc/ESFP.jpg"},
+			"ENTJ": {"category": "ENTJ-category", "explain": "ENTJ-explain", "img": "rsc/ENTJ.jpg"},
+			"ENTP": {"category": "ENTP-category", "explain": "ENTP-explain", "img": "rsc/ENTP.jpg"},
+			"ENFJ": {"category": "ENFJ-category", "explain": "ENFJ-explain", "img": "rsc/ENFJ.jpg"},
+			"ENFP": {"category": "ENFP-category", "explain": "ENFP-explain", "img": "rsc/ENFP.jpg"},
+			"ISTJ": {"category": "ISTJ-category", "explain": "ISTJ-explain", "img": "rsc/ISTJ.jpg"},
+			"ISTP": {"category": "ISTP-category", "explain": "ISTP-explain", "img": "rsc/ISTP.jpg"},
+			"ISFJ": {"category": "ISFJ-category", "explain": "ISFJ-explain", "img": "rsc/ISFJ.jpg"},
+			"ISFP": {"category": "ISFP-category", "explain": "ISFP-explain", "img": "rsc/ISFP.jpg"},
+			"INTJ": {"category": "INTJ-category", "explain": "INTJ-explain", "img": "rsc/INTJ.jpg"},
+			"INTP": {"category": "INTP-category", "explain": "INTP-explain", "img": "rsc/INTP.jpg"},
+			"INFJ": {"category": "INFJ-category", "explain": "INFJ-explain", "img": "rsc/INFJ.jpg"},
+			"INFP": {"category": "INFP-category", "explain": "INFP-explain", "img": "rsc/INFP.jpg"}
 		}
 		function start() {
 			$(".start").hide();
@@ -75,6 +93,9 @@
 				($("#TF").val() >= 2) ? mbti+="T" : mbti+="F";
 				($("#JP").val() >= 2) ? mbti+="J" : mbti+="P";
 				alert(mbti);
+				$("#img").attr("src",result[mbti]["img"]);
+				$("#category").html(result[mbti]["category"]);
+				$("#explain").html(result[mbti]["explain"]);
 			} else {
 				$(".progress-bar").attr('style','width: calc(100/12*'+num+'%)');
 				$("#title").html(q[num]["title"]);
