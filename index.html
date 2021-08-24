@@ -22,6 +22,11 @@
 		<button id="A" type="button" class="btn btn-primary mt-5">Primary1</button>
 		<button id="B" type="button" class="btn btn-primary mt-5">Primary2</button>
 	</article>
+	<article class="result">
+		<img id="img" src="" alt="">
+		<h2 id="mbti">이미지제목</h2>
+		<h3 id="explain">설명</h3>
+	</article>
 	<input type="hidden" id="EI" value="0">
 	<input type="hidden" id="SN" value="0">
 	<input type="hidden" id="TF" value="0">
@@ -63,6 +68,10 @@
 			next();
 		});
 		function next() {
+			if(num==13){
+				$(".question").hide();
+				$(".result").show();
+			}
 			$(".progress-bar").attr('style','width: calc(100/12*'+num+'%)');
 			$("#title").html(q[num]["title"]);
 			$("#type").val(q[num]["type"]);
