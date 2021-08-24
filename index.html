@@ -62,16 +62,13 @@
 			next();
 		});
 		$("#B").click(function(){
-			var type = $("#type").val();
-			var preValue = $("#"+type).val();
-			$("#"+type).val(parseInt(preValue)+1);
 			next();
 		});
 		function next() {
 			if(num==13){
 				$(".question").hide();
 				$(".result").show();
-				
+
 				var mbti = "";
 				($("#EI").val() >= 2) ? mbti+="E" : mbti+="I";
 				($("#SN").val() >= 2) ? mbti+="S" : mbti+="N";
